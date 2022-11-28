@@ -47,6 +47,7 @@ form fieldset {
   font-size: 15px;
   padding: 5px;
   border: inherit;
+  color: #3a8891;
 }
 
 .formInputs button {
@@ -66,7 +67,13 @@ form fieldset {
 }
 
 .listHeading {
-  margin-top: 20px;
+  font-size: 2em;
+  font-weight: 600;
+  margin-top: 50px;
   color: #f2deba;
   background: #0e5e6f;
+  padding: 50px 100px;
+  border-top-right-radius: 60%;
+  border-bottom-left-radius: 10%;
+  border-bottom-right-radius: 1%;
 }
