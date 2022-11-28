@@ -6,7 +6,7 @@ export function AttendeeForm() {
         <div className="formInputs">
           <input type="text" name="fname" placeholder="First name"></input>
           <input type="text" name="lname" placeholder="Last name"></input>
-          <input type="text" name="email" placeholder="Email"></input>
+          <input type="email" name="email" placeholder="Email"></input>
           <input type="text" name="age" placeholder="Age"></input>
           <button type="submit">Submit</button>
         </div>

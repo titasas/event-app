@@ -77,3 +77,15 @@ form fieldset {
   border-bottom-left-radius: 10%;
   border-bottom-right-radius: 1%;
 }
+
+.listOfAttendees {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.attendeeRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+}

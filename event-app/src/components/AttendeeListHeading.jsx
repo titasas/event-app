@@ -1,3 +1,3 @@
-export function AttendeeListHeading() {
-  return <div className="listHeading">Attendee list</div>;
+export function AttendeeListHeading(props) {
+  return <div className="listHeading">Attendees ({props.attendeesCount})</div>;
 }
