@@ -11,9 +11,62 @@ body {
   background: #ffefd6;
 }
 
-.HeaderContainer {
+.headerContainer {
   background: #0e5e6f;
   text-align: center;
   color: #f2deba;
   padding: 20px;
+  border-bottom-left-radius: 70%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #3a8891;
+}
+
+form fieldset {
+  font-size: 30px;
+  border: 3px solid #3a8891;
+  padding: 40px 150px 50px 150px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 130px;
+  border-bottom-right-radius: 40%;
+  border-bottom-left-radius: 30px;
+}
+
+.formInputs {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.formInputs input {
+  height: 30px;
+  font-size: 15px;
+  padding: 5px;
+  border: inherit;
+}
+
+.formInputs button {
+  height: 40px;
+  padding: 10px 40px;
+  background: #3a8891;
+  border: inherit;
+  color: #f2deba;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.formInputs button:hover {
+  background: #0e5e6f;
+  cursor: pointer;
+  color: #ffefd6;
+}
+
+.listHeading {
+  margin-top: 20px;
+  color: #f2deba;
+  background: #0e5e6f;
 }
