@@ -25,9 +25,9 @@ export function AttendeeList() {
     },
   ];
 
-  return (
+  return attendees.length ? (
     <>
-      <AttendeeListHeading attendeesCount={attendees.length} />
+      <AttendeeListHeading attendees={`Attendees (${attendees.length})`} />
       <div className="listOfAttendees">
         {attendees.map((attendee, index) => (
           <div key={index} className="attendeeRow">
@@ -39,5 +39,7 @@ export function AttendeeList() {
         ))}
       </div>
     </>
+  ) : (
+    <AttendeeListHeading attendees={`The attendees list is currently empty`} />
   );
 }
