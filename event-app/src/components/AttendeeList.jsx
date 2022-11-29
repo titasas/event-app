@@ -1,8 +1,7 @@
 import { AttendeeListHeading } from "./AttendeeListHeading";
 import { AttendeeRow } from "./AttendeeRow";
-import { attendees } from "../data/AttendeeData";
 
-export function AttendeeList({ handleDelete }) {
+export function AttendeeList({ handleDelete, attendees }) {
   return attendees.length ? (
     <>
       <AttendeeListHeading attendees={`Attendees (${attendees.length})`} />

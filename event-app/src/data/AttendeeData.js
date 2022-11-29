@@ -1,4 +1,4 @@
-export const attendees = [
+export const AttendeeData = [
   {
     id: 1,
     fname: "Titas",

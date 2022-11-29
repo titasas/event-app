@@ -1,4 +1,4 @@
-export function AttendeeForm() {
+export function AttendeeForm(props) {
   return (
     <form>
       <fieldset>
