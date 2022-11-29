@@ -1,17 +1,13 @@
 import { FaTimes } from "react-icons/fa";
 
-export function AttendeeRow({ attendee }) {
-  const handleClick = (id) => {
-    console.log(id);
-  };
-
+export function AttendeeRow({ attendee, handleDelete }) {
   return (
     <div className="attendeeRow">
       <p>
         {attendee.fname} {attendee.lname}, {attendee.age}.
       </p>
       <div className="rowActions">
-        <button onClick={() => handleClick(attendee.id)} className="deleteBtn">
+        <button onClick={() => handleDelete(attendee.id)} className="deleteBtn">
           <FaTimes />
         </button>
       </div>
