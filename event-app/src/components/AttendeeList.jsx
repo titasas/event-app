@@ -1,5 +1,5 @@
-import { FaTimes } from "react-icons/fa";
 import { AttendeeListHeading } from "./AttendeeListHeading";
+import { AttendeeRow } from "./AttendeeRow";
 
 export function AttendeeList() {
   const attendees = [
@@ -29,21 +29,7 @@ export function AttendeeList() {
   return attendees.length ? (
     <>
       <AttendeeListHeading attendees={`Attendees (${attendees.length})`} />
-      <div className="listOfAttendees">
-        {attendees.map((attendee, index) => (
-          <div key={index} className="attendeeRow">
-            <p>
-              {attendee.fname} {attendee.lname}, {attendee.age}.
-            </p>
-            <div className="rowActions">
-              <button className="deleteBtn">
-                <FaTimes />
-              </button>
-            </div>
-            <p className="emailBox">{attendee.email}</p>
-          </div>
-        ))}
-      </div>
+      <AttendeeRow attendees={attendees} />
     </>
   ) : (
     <AttendeeListHeading attendees={`The attendees list is currently empty`} />
