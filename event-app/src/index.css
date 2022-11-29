@@ -3,6 +3,7 @@
 h1,
 h2 {
   margin: 0;
+  text-shadow: 1px 1px 1px;
 }
 
 body {
@@ -76,17 +77,44 @@ form fieldset {
   border-top-right-radius: 60%;
   border-bottom-left-radius: 10%;
   border-bottom-right-radius: 1%;
+  text-shadow: 1px 1px 1px;
 }
 
 .listOfAttendees {
   padding: 20px;
   display: flex;
   flex-direction: column;
+  gap: 3px;
 }
 
 .attendeeRow {
   display: flex;
   justify-content: space-between;
-  padding: 0 30px;
+  position: relative;
+  padding: 0 20px;
   color: #3a8891;
+  border: 2px solid #0e5e6f;
+  border-radius: 3px;
+  font-weight: 500;
+  text-shadow: 1px 1px 1px;
+}
+
+.rowActions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.deleteBtn {
+  position: absolute;
+  background: inherit;
+  border: inherit;
+  color: #0e5e6f;
+  cursor: pointer;
+  right: 2%;
+}
+
+.emailBox {
+  position: absolute;
+  right: 30%;
 }

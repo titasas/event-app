@@ -1,3 +1,4 @@
+import { FaTimes } from "react-icons/fa";
 import { AttendeeListHeading } from "./AttendeeListHeading";
 
 export function AttendeeList() {
@@ -33,8 +34,13 @@ export function AttendeeList() {
           <div key={index} className="attendeeRow">
             <p>
               {attendee.fname} {attendee.lname}, {attendee.age}.
-            </p>{" "}
-            <p>Email address: {attendee.email}</p>
+            </p>
+            <div className="rowActions">
+              <button className="deleteBtn">
+                <FaTimes />
+              </button>
+            </div>
+            <p className="emailBox">{attendee.email}</p>
           </div>
         ))}
       </div>
