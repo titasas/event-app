@@ -51,18 +51,25 @@ form fieldset {
   color: #3a8891;
 }
 
-.formInputs button {
+.submitBtn {
   height: 40px;
   padding: 10px 40px;
-  background: #3a8891;
   border: inherit;
   color: #f2deba;
   font-weight: 600;
   font-size: 15px;
 }
 
-.formInputs button:hover {
-  background: #0e5e6f;
+.btnEnabled {
+  background: #3a8891;
+}
+
+.btnDisabled {
+  background: #3a88915b;
+}
+
+.submitBtn:hover {
+  box-shadow: 0 0 5px #3a8891;
   cursor: pointer;
   color: #ffefd6;
 }
@@ -93,8 +100,8 @@ form fieldset {
   position: relative;
   padding: 0 20px;
   color: #3a8891;
-  border: 2px solid #0e5e6f;
-  border-radius: 3px;
+  border: 2px solid #0e5d6f8f;
+  border-radius: 5px;
   font-weight: 500;
   text-shadow: 1px 1px 1px;
 }
