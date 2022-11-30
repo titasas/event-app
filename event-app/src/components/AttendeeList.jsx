@@ -6,11 +6,11 @@ export function AttendeeList({ handleDelete, attendees }) {
     <>
       <AttendeeListHeading attendees={`Attendees (${attendees.length})`} />
       <div className="listOfAttendees">
-        {attendees.map((attendee, index) => (
+        {attendees.map((attendee) => (
           <AttendeeRow
             className="listOfAttendees"
             attendee={attendee}
-            key={index}
+            key={attendee.id}
             handleDelete={handleDelete}
           />
         ))}
