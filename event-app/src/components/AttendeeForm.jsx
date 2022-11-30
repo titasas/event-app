@@ -3,13 +3,50 @@ import { Button } from "./Button";
 
 export function AttendeeForm(props) {
   const [name, setName] = useState("");
+  const [surname, setSurname] = useState("");
+  const [email, setEmail] = useState("");
+  const [age, setAge] = useState("");
+
+  const [attendeeForm, setAttendeeForm] = useState({
+    name: name,
+    surname: surname,
+    email: email,
+    age: age,
+  });
+
+  const [message, setMessage] = useState("");
 
   const handleNameChange = (e) => {
     setName(e.target.value);
   };
 
+  const handleSurnameChange = (e) => {
+    setSurname(e.target.value);
+  };
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handleAgeChange = (e) => {
+    setAge(e.target.value);
+  };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    setAttendeeForm({
+      name,
+      surname,
+      email,
+      age,
+    });
+    if (name === "" || surname === "" || email === "" || age === "") {
+      setMessage("All attendee info fields must be filled in");
+    }
+  };
+
   return (
-    <form>
+    <form onSubmit={handleFormSubmit}>
       <fieldset>
         <legend>Create Attendee</legend>
         <div className="formInputs">
@@ -20,12 +57,31 @@ export function AttendeeForm(props) {
             name="fname"
             placeholder="First name"
           ></input>
-          <input type="text" name="lname" placeholder="Last name"></input>
-          <input type="email" name="email" placeholder="Email"></input>
-          <input type="text" name="age" placeholder="Age"></input>
+          <input
+            onChange={handleSurnameChange}
+            value={surname}
+            type="text"
+            name="lname"
+            placeholder="Last name"
+          ></input>
+          <input
+            onChange={handleEmailChange}
+            value={email}
+            type="email"
+            name="email"
+            placeholder="Email"
+          ></input>
+          <input
+            onChange={handleAgeChange}
+            value={age}
+            type="text"
+            name="age"
+            placeholder="Age"
+          ></input>
           <Button type="submit">Submit</Button>
         </div>
       </fieldset>
+      {message && <div className="message">{message}</div>}
     </form>
   );
 }

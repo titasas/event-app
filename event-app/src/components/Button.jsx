@@ -1,26 +1,20 @@
 import PropTypes from "prop-types";
 
-export function Button({ children, version, type, isDisabled }) {
+export function Button({ children, type }) {
   return (
-    <button
-      type={type}
-      disabled={isDisabled}
-      className={`submitBtn ${version}`}
-    >
+    <button type={type} className={`submitBtn`}>
       {children}
     </button>
   );
 }
 
 Button.defaultProps = {
-  version: "btnEnabled",
   type: "button",
-  isDisabled: false,
+  isDisabled: true,
 };
 
 Button.propTypes = {
   children: PropTypes.node.isRequired,
-  version: PropTypes.string,
   type: PropTypes.string,
   isDisabled: PropTypes.bool,
 };
