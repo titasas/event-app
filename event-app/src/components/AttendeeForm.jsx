@@ -7,6 +7,7 @@ export function AttendeeForm(props) {
   const [email, setEmail] = useState("");
   const [age, setAge] = useState("");
 
+  // eslint-disable-next-line no-unused-vars
   const [attendeeForm, setAttendeeForm] = useState({
     name: name,
     surname: surname,
