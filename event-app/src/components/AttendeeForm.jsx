@@ -1,19 +1,11 @@
 import { useState } from "react";
 import { Button } from "./Button";
 
-export function AttendeeForm(props) {
+export function AttendeeForm({ handleAdd }) {
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
   const [email, setEmail] = useState("");
   const [age, setAge] = useState("");
-
-  // eslint-disable-next-line no-unused-vars
-  const [attendeeForm, setAttendeeForm] = useState({
-    name: name,
-    surname: surname,
-    email: email,
-    age: age,
-  });
 
   const [message, setMessage] = useState("");
 
@@ -35,12 +27,13 @@ export function AttendeeForm(props) {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    setAttendeeForm({
+    const newAttendee = {
       name,
       surname,
       email,
       age,
-    });
+    };
+    handleAdd(newAttendee);
     if (name === "" || surname === "" || email === "" || age === "") {
       setMessage("All attendee info fields must be filled in");
     }
