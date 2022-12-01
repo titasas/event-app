@@ -1,22 +1,22 @@
 export const AttendeeData = [
   {
     id: 1,
-    fname: "Titas",
-    lname: "Petrauskas",
+    name: "Titas",
+    surname: "Petrauskas",
     email: "titas.petrauskas@gmail.com",
     age: "25",
   },
   {
     id: 2,
-    fname: "Vardas",
-    lname: "Pavardas",
+    name: "Vardas",
+    surname: "Pavardas",
     email: "var.pavar@gmail.com",
     age: "29",
   },
   {
     id: 3,
-    fname: "Vardenis",
-    lname: "Pavardenis",
+    name: "Vardenis",
+    surname: "Pavardenis",
     email: "salalala@gmail.com",
     age: "18",
   },
