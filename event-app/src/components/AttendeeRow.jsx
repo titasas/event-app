@@ -1,4 +1,4 @@
-import { FaTimes } from "react-icons/fa";
+import { FaTimes, FaEdit } from "react-icons/fa";
 
 export function AttendeeRow({ attendee, handleDelete }) {
   return (
@@ -7,6 +7,9 @@ export function AttendeeRow({ attendee, handleDelete }) {
         {attendee.name} {attendee.surname}, {attendee.age}.
       </p>
       <div className="rowActions">
+        <button className="editBtn">
+          <FaEdit />
+        </button>
         <button onClick={() => handleDelete(attendee.id)} className="deleteBtn">
           <FaTimes />
         </button>

@@ -105,13 +105,21 @@ form fieldset {
   align-items: center;
 }
 
-.deleteBtn {
+.deleteBtn,
+.editBtn {
   position: absolute;
   background: inherit;
   border: inherit;
   color: #0e5e6f;
   cursor: pointer;
+}
+
+.deleteBtn {
   right: 2%;
+}
+
+.editBtn {
+  right: 4%;
 }
 
 .emailBox {
