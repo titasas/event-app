@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { AttendeeContext } from "../context/AttendeeContext";
 
 export function AttendeeRow({ attendee }) {
-  const { deleteAttendee } = useContext(AttendeeContext);
+  const { deleteAttendee, editAttendee } = useContext(AttendeeContext);
 
   return (
     <div className="attendeeRow">
@@ -11,7 +11,7 @@ export function AttendeeRow({ attendee }) {
         {attendee.name} {attendee.surname}, {attendee.age}.
       </p>
       <div className="rowActions">
-        <button className="editBtn">
+        <button onClick={() => editAttendee(attendee)} className="editBtn">
           <FaEdit />
         </button>
         <button

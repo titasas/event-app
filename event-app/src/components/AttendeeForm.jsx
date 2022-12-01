@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { Button } from "./Button";
 import { AttendeeContext } from "../context/AttendeeContext";
 
@@ -9,7 +9,17 @@ export function AttendeeForm() {
   const [age, setAge] = useState("");
   const [message, setMessage] = useState("");
 
-  const { addAttendee } = useContext(AttendeeContext);
+  const { addAttendee, attendeeEdit, updateAttendee } =
+    useContext(AttendeeContext);
+
+  useEffect(() => {
+    if (attendeeEdit.edit === true) {
+      setName(attendeeEdit.attendee.name);
+      setSurname(attendeeEdit.attendee.surname);
+      setEmail(attendeeEdit.attendee.email);
+      setAge(attendeeEdit.attendee.age);
+    }
+  }, [attendeeEdit]);
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -35,7 +45,12 @@ export function AttendeeForm() {
       email,
       age,
     };
-    addAttendee(newAttendee);
+    if (attendeeEdit.edit === true) {
+      updateAttendee(attendeeEdit.attendee.id, newAttendee);
+    } else {
+      addAttendee(newAttendee);
+    }
+
     if (name === "" || surname === "" || email === "" || age === "") {
       setMessage("All attendee info fields must be filled in");
     }
