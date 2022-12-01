@@ -1,6 +1,10 @@
 import { FaTimes, FaEdit } from "react-icons/fa";
+import { useContext } from "react";
+import { AttendeeContext } from "../context/AttendeeContext";
 
-export function AttendeeRow({ attendee, handleDelete }) {
+export function AttendeeRow({ attendee }) {
+  const { deleteAttendee } = useContext(AttendeeContext);
+
   return (
     <div className="attendeeRow">
       <p>
@@ -10,7 +14,10 @@ export function AttendeeRow({ attendee, handleDelete }) {
         <button className="editBtn">
           <FaEdit />
         </button>
-        <button onClick={() => handleDelete(attendee.id)} className="deleteBtn">
+        <button
+          onClick={() => deleteAttendee(attendee.id)}
+          className="deleteBtn"
+        >
           <FaTimes />
         </button>
       </div>

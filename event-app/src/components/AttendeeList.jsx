@@ -1,7 +1,11 @@
 import { AttendeeListHeading } from "./AttendeeListHeading";
 import { AttendeeRow } from "./AttendeeRow";
+import { useContext } from "react";
+import { AttendeeContext } from "../context/AttendeeContext";
 
-export function AttendeeList({ handleDelete, attendees }) {
+export function AttendeeList() {
+  const { attendees } = useContext(AttendeeContext);
+
   return attendees.length ? (
     <>
       <AttendeeListHeading attendees={`Attendees (${attendees.length})`} />
@@ -11,7 +15,6 @@ export function AttendeeList({ handleDelete, attendees }) {
             className="listOfAttendees"
             attendee={attendee}
             key={attendee.id}
-            handleDelete={handleDelete}
           />
         ))}
       </div>
