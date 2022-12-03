@@ -41,17 +41,27 @@ export const AttendeeProvider = ({ children }) => {
   // Delete attendee
   const deleteAttendee = async (id) => {
     if (window.confirm("Do you want to delete this attendee?")) {
-      await fetch("/attendees/${id", { method: "DELETE" });
+      await fetch(`/attendees/${id}`, { method: "DELETE" });
 
       setAttendees(attendees.filter((attendee) => attendee.id !== id));
     }
   };
 
   // Update attendee
-  const updateAttendee = (id, updAttendee) => {
+  const updateAttendee = async (id, updAttendee) => {
+    const response = await fetch(`/attendees/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(updAttendee),
+    });
+
+    const data = await response.json();
+
     setAttendees(
       attendees.map((attendee) =>
-        attendee.id === id ? { ...attendee, ...updAttendee } : attendee
+        attendee.id === id ? { ...attendee, ...data } : attendee
       )
     );
   };
