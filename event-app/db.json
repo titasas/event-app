@@ -1,0 +1,25 @@
+{
+  "attendees": [
+    {
+      "id": 1,
+      "name": "Titasas",
+      "surname": "Backendas",
+      "email": "titasas@one.lt",
+      "age": 26
+    },
+    {
+      "id": 2,
+      "name": "Backendas",
+      "surname": "Jsonas",
+      "email": "titas@one.lt",
+      "age": 24
+    },
+    {
+      "id": 3,
+      "name": "Mock",
+      "surname": "Apievicius",
+      "email": "mockas@yahoo.com",
+      "age": 25
+    }
+  ]
+}
