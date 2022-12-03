@@ -20,6 +20,13 @@
       "surname": "Apievicius",
       "email": "mockas@yahoo.com",
       "age": 25
+    },
+    {
+      "name": "Test add",
+      "surname": "Test",
+      "email": "test@test.com",
+      "age": "54",
+      "id": 4
     }
   ]
 }

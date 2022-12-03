@@ -1,4 +1,3 @@
-import { v4 as uuidv4 } from "uuid";
 import { createContext, useState, useEffect } from "react";
 
 export const AttendeeContext = createContext();
@@ -26,9 +25,17 @@ export const AttendeeProvider = ({ children }) => {
   };
 
   // Add new attendee
-  const addAttendee = (newAttendee) => {
-    newAttendee.id = uuidv4();
-    setAttendees([newAttendee, ...attendees]);
+  const addAttendee = async (newAttendee) => {
+    const response = await fetch("/attendees", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newAttendee),
+    });
+    const data = await response.json();
+
+    setAttendees([data, ...attendees]);
   };
 
   // Delete attendee
