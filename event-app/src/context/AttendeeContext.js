@@ -18,9 +18,7 @@ export const AttendeeProvider = ({ children }) => {
 
   // Fetch attendees
   const fetchAttendees = async () => {
-    const response = await fetch(
-      "http://localhost:5000/attendees?_sort=id&_order=desc"
-    );
+    const response = await fetch("/attendees?_sort=id&_order=desc");
     const data = await response.json();
 
     setAttendees(data);
