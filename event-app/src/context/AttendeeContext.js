@@ -4,6 +4,7 @@ import { createContext, useState, useEffect } from "react";
 export const AttendeeContext = createContext();
 
 export const AttendeeProvider = ({ children }) => {
+  const [isLoading, setIsLoading] = useState(true);
   const [attendees, setAttendees] = useState([]);
 
   const [attendeeEdit, setAttendeeEdit] = useState({
@@ -23,6 +24,7 @@ export const AttendeeProvider = ({ children }) => {
     const data = await response.json();
 
     setAttendees(data);
+    setIsLoading(false);
   };
 
   // Add new attendee
@@ -60,6 +62,7 @@ export const AttendeeProvider = ({ children }) => {
       value={{
         attendees,
         attendeeEdit,
+        isLoading,
         deleteAttendee,
         addAttendee,
         editAttendee,
