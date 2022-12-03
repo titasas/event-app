@@ -131,3 +131,88 @@ form fieldset {
   color: rgba(255, 68, 0, 0.219);
   text-shadow: 1px 1px rgba(255, 0, 0, 0.26);
 }
+
+@media screen and (max-width: 1340px) {
+  form fieldset {
+    padding: 40px 100px 50px 100px;
+  }
+}
+
+@media screen and (max-width: 1240px) {
+  form fieldset {
+    padding: 40px 50px 50px 50px;
+  }
+}
+
+@media screen and (max-width: 1140px) {
+  form fieldset {
+    padding: 40px 250px 50px 250px;
+  }
+
+  .formInputs {
+    flex-direction: column;
+  }
+
+  .formInputs input {
+    height: 25px;
+    width: 200%;
+  }
+
+  .listOfAttendees {
+    margin-bottom: 50px;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  form fieldset {
+    padding: 40px 150px 50px 150px;
+  }
+
+  .formInputs input {
+    width: 150%;
+  }
+
+  .editBtn {
+    right: 6%;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  form fieldset {
+    padding: 40px 100px 50px 100px;
+  }
+
+  .formInputs input {
+    width: 100%;
+  }
+
+  .editBtn {
+    right: 8%;
+  }
+
+  .emailBox {
+    position: absolute;
+    right: 20%;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  form fieldset {
+    border: none;
+    padding: 2px 100px 0 100px;
+  }
+
+  legend {
+    text-align: center;
+    font-size: 20px;
+  }
+
+  .formInputs input {
+    width: 80%;
+    font-size: 12px;
+  }
+
+  .attendeeRow {
+    font-size: 14px;
+  }
+}
