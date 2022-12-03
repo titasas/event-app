@@ -39,8 +39,10 @@ export const AttendeeProvider = ({ children }) => {
   };
 
   // Delete attendee
-  const deleteAttendee = (id) => {
+  const deleteAttendee = async (id) => {
     if (window.confirm("Do you want to delete this attendee?")) {
+      await fetch("/attendees/${id", { method: "DELETE" });
+
       setAttendees(attendees.filter((attendee) => attendee.id !== id));
     }
   };
