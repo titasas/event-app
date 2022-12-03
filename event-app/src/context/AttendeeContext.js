@@ -1,37 +1,29 @@
 import { v4 as uuidv4 } from "uuid";
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 
 export const AttendeeContext = createContext();
 
 export const AttendeeProvider = ({ children }) => {
-  const [attendees, setAttendees] = useState([
-    {
-      id: 1,
-      name: "Titas",
-      surname: "Petrauskas",
-      email: "titas.petrauskas@gmail.com",
-      age: "25",
-    },
-    {
-      id: 2,
-      name: "Vardas",
-      surname: "Pavardas",
-      email: "var.pavar@gmail.com",
-      age: "29",
-    },
-    {
-      id: 3,
-      name: "Vardenis",
-      surname: "Pavardenis",
-      email: "salalala@gmail.com",
-      age: "18",
-    },
-  ]);
+  const [attendees, setAttendees] = useState([]);
 
   const [attendeeEdit, setAttendeeEdit] = useState({
     item: {},
     edit: false,
   });
+
+  useEffect(() => {
+    fetchAttendees();
+  }, []);
+
+  // Fetch attendees
+  const fetchAttendees = async () => {
+    const response = await fetch(
+      "http://localhost:5000/attendees?_sort=id&_order=desc"
+    );
+    const data = await response.json();
+
+    setAttendees(data);
+  };
 
   // Add new attendee
   const addAttendee = (newAttendee) => {
