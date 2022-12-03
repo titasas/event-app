@@ -15,11 +15,11 @@
       "age": 24
     },
     {
-      "id": 3,
       "name": "Mock",
       "surname": "Apievicius",
-      "email": "mockas@yahoo.com",
-      "age": 25
+      "email": "test@test.db",
+      "age": "99",
+      "id": 3
     }
   ]
 }

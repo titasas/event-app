@@ -39,20 +39,21 @@ export function AttendeeForm() {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
+
     const newAttendee = {
       name,
       surname,
       email,
       age,
     };
+    if (name === "" || surname === "" || email === "" || age === "") {
+      setMessage("All attendee info fields must be filled in");
+      return;
+    }
     if (attendeeEdit.edit === true) {
       updateAttendee(attendeeEdit.attendee.id, newAttendee);
     } else {
       addAttendee(newAttendee);
-    }
-
-    if (name === "" || surname === "" || email === "" || age === "") {
-      setMessage("All attendee info fields must be filled in");
     }
   };
 
